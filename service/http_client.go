@@ -1,6 +1,7 @@
 package service
 
 import (
+	"crypto/tls"
 	"net/http"
 	"one-api/common"
 	"time"
@@ -24,7 +25,13 @@ func init() {
 }
 
 func GetHttpClient() *http.Client {
-	return httpClient
+	// 创建一个自定义的Transport，根据环境变量设置TLSClientConfig
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+
+	client := &http.Client{Transport: tr}
+	return client
 }
 
 func GetImpatientHttpClient() *http.Client {

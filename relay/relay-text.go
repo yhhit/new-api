@@ -61,6 +61,19 @@ func getAndValidateTextRequest(c *gin.Context, relayInfo *relaycommon.RelayInfo)
 		}
 	}
 	relayInfo.IsStream = textRequest.Stream
+
+	if textRequest.Model=="aihuan-tuning-model" {
+		if textRequest.TopP == 0 {
+			textRequest.TopP = 0.9
+		}
+		if textRequest.Temperature == 0 {
+			textRequest.Temperature = 0.9
+		}
+		if textRequest.MaxTokens == 0 {
+			textRequest.MaxTokens = 4096
+		}
+	}
+	
 	return textRequest, nil
 }
 
