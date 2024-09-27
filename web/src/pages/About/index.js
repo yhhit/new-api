@@ -44,7 +44,7 @@ const About = () => {
                 https://github.com/Calcium-Ion/new-api
               </a>
               <p>
-                NewAPI © 2023 CalciumIon | 基于 One API v0.5.4 © 2023
+                NewAPI © 2023 yhhit | 基于 One API v0.5.4 © 2023
                 JustSong。
               </p>
               <p>
