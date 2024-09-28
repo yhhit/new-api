@@ -67,7 +67,7 @@ func getAndValidateTextRequest(c *gin.Context, relayInfo *relaycommon.RelayInfo)
 			textRequest.TopP = 0.9
 		}
 		if textRequest.Temperature == 0 {
-			textRequest.Temperature = 0.9
+			textRequest.Temperature = 0.8
 		}
 		if textRequest.MaxTokens == 0 {
 			textRequest.MaxTokens = 4096
